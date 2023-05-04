@@ -34,9 +34,9 @@ app.use(xss());
 
 // default page
 app.get("/", (req, res) => {
-  res.redirect("/api");
+  res.send("<a href='/api-docs'>Documentation</a>");
 });
-app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 // routes
 app.use("/api/v1/auth", authRouter);
